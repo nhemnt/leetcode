@@ -12,6 +12,8 @@
  * @return {ListNode}
  */
 var getIntersectionNode = function(headA, headB) {
+    if (!headA || !headB) return null;
+
     let copyA = headA;
     let copyB = headB;
     
