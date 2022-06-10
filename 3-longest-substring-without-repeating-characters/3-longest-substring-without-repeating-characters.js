@@ -17,7 +17,7 @@ var lengthOfLongestSubstring = function(s) {
             // console.log({key: s[i], count})
             obj[s[i]] = i;
             count++
-             if(count>max) max =count;
+            max = Math.max(count,max);
         }
     }
     return max;
