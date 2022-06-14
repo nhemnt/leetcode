@@ -15,3 +15,5 @@ var twoSum = function(nums, target) {
     }
     // console.log(obj);
 };
+
+module.exports = twoSum;
