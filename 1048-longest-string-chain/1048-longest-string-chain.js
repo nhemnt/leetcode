@@ -19,3 +19,5 @@ var longestStrChain = function(words) {
   
   return max;
 };
+
+module.exports = longestStrChain;
