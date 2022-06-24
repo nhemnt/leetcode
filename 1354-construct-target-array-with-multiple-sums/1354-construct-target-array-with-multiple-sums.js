@@ -14,7 +14,6 @@ var isPossible = function(t) {
     let f = q.dequeue().element;
     sum -= f;
     if(f <= sum || sum < 1) return false;
-    console.log({sum, f})
     f %= sum;
     sum += f;
     q.enqueue(f || sum)
