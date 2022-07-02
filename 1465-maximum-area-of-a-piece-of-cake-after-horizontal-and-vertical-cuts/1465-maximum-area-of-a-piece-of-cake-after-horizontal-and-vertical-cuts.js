@@ -17,7 +17,6 @@ var maxArea = function(h, w, horizontalCuts, verticalCuts) {
     for(let i =1; i< verticalCuts.length; i++){
         vm = Math.max(vm, Number(verticalCuts[i]) - Number(verticalCuts[i-1]));
     }
-    
     return BigInt(hm)*BigInt(vm) % BigInt(1e9+7);
     
 };
