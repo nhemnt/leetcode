@@ -14,7 +14,6 @@ var detectCycle = function(head) {
   if(!head) return head;
   let p1 = head;
   let p2 = head;
-  let p1c =0, p2c = 0;
   while(p2 && p2.next && p2.next){
     p1 = p1.next;
     p2 = p2.next.next;
