@@ -38,7 +38,7 @@ var StockSpanner = function() {
  
 StockSpanner.prototype.next = function(price) {
     i++;
-    console.log({i, s: s.printStack()});
+    // console.log({i, s: s.printStack()});
     while(!s.isEmpty()){
         if(price < s.peek()[0]){
             const val = i - s.peek()[1] 
