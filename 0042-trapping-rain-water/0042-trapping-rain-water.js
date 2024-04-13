@@ -27,7 +27,7 @@ function NGL(arr){
 var trap = function(height) {
     const ngl = NGL(height)
     const ngr = NGR(height);
-    console.log({ngl, ngr});
+    // console.log({ngl, ngr});
     return height.reduce((acc, curr, i) => {
         return acc + Math.min(ngl[i], ngr[i]) - curr;
     }, 0)
