@@ -6,9 +6,7 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function(nums1, m, nums2, n) {
-    let j =0;
-    for(let i = m; i< m+n; i++, j++){
-        nums1[i] = nums2[j]
-    }
-    nums1.sort()
+   while(n){
+    nums1[m+n-1] = nums1[m-1] > nums2[n-1] ? nums1[--m] : nums2[--n];
+   }
 };
