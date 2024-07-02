@@ -3,32 +3,26 @@
  * @return {number}
  */
 
-function NGR(arr){
-    const r = [arr[arr.length-1]];
-    let max = arr[arr.length-1];
-    for(let i = arr.length -2; i>=0; i--){
-        max = Math.max(max, arr[i]);
-        r.push(max);
+var trap = function (height) {
+    const leftMax = [height[0]];
+    const rightMax = [height[height.length - 1]];
+    max = leftMax[0]
+    for (let i = 1; i < height.length; i++) {
+        max = Math.max(max, height[i]);
+        leftMax.push(max);
+    }
+    max = rightMax[0]
+    for (let i = height.length - 2; i >= 0; i--) {
+        max = Math.max(max, height[i]);
+        rightMax.unshift(max);
     }
 
-    return r.reverse()
-}
+   let result = 0;
+   for(let i =1; i<leftMax.length-1; i++){
+        result += Math.min(leftMax[i], rightMax[i]) - height[i] ;
+   }
 
-function NGL(arr){
-    const r = [arr[0]];
-    let max = arr[0];
-    for(let i = 1; i<arr.length; i++){
-        max = Math.max(max, arr[i]);
-        r.push(max);
-    }
+   return result;
 
-    return r
-}
-var trap = function(height) {
-    const ngl = NGL(height)
-    const ngr = NGR(height);
-    // console.log({ngl, ngr});
-    return height.reduce((acc, curr, i) => {
-        return acc + Math.min(ngl[i], ngr[i]) - curr;
-    }, 0)
+
 };
